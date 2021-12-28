@@ -138,7 +138,7 @@ const Copyright = () => {
     <Typography variant="body2" color="textSecondary" align="center">
       {"Copyright © "}
       <Link color="inherit" to="/">
-        管理画面
+        kb
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
