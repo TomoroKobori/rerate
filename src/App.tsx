@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from './components/pages/HomePage';
 import ProjectPage from './components/pages/ProjectPage';
 
-
 const App: React.FC = () => {
   return (
     <Router>

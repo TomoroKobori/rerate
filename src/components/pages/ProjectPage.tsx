@@ -34,7 +34,7 @@ const useStyles = makeStyles({
 const ProjectPage: React.FC = () => {
   const classes = useStyles();
   return (
-    <GenericTemplate title="商品ページ">
+    <GenericTemplate title="案件ページ">
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>

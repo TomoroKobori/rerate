@@ -18,7 +18,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import IconButton from "@material-ui/core/IconButton";
 import HomeIcon from "@material-ui/icons/Home";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import AssessmentIcon from '@material-ui/icons/Assessment';
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -221,9 +221,9 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({
             <Link to="/projects" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
-                  <ShoppingCartIcon />
+                  <AssessmentIcon />
                 </ListItemIcon>
-                <ListItemText primary="商品ページ" />
+                <ListItemText primary="案件ページ" />
               </ListItem>
             </Link>
           </List>
