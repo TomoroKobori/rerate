@@ -26,7 +26,7 @@ const useStyles = makeStyles({
 const ProjectPage: React.FC = () => {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:3001/projects')
+    axios.get(`${process.env.REACT_APP_API_BASE_URL}/projects`)
           .then(res => {
             setProjects(res.data)
           })
