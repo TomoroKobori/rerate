@@ -10,6 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_12_29_011245) do
+
+  create_table "projects", charset: "utf8mb4", collation: "utf8mb4_bin", force: :cascade do |t|
+    t.string "title", null: false, comment: "タイトル"
+    t.integer "status", default: 0, null: false, comment: "ステータス"
+    t.integer "point", null: false, comment: "ポイント"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

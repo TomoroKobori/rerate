@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+10.times do |i|
+  Project.create!(
+    title: "Sample Title #{SecureRandom.alphanumeric(6)}",
+    status: Project.statuses.keys.shuffle.first,
+    point: [1,3,5,10].shuffle.first
+  )
+end
