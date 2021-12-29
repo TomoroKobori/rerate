@@ -8,22 +8,14 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
+import axios from "axios"
+import { useEffect, useState } from 'react';
 
-const createData = (
+type Project = {
   title: string,
   status: string,
   point: number,
-) => {
-  return { title, status, point };
-};
-
-const rows = [
-  createData("project1", "未着手", 3),
-  createData("project2", "完了", 1),
-  createData("project3", "作業中", 3),
-  createData("project4", "完了", 3),
-  createData("project5", "作業中", 5),
-];
+ }
 
 const useStyles = makeStyles({
   table: {
@@ -32,6 +24,14 @@ const useStyles = makeStyles({
 });
 
 const ProjectPage: React.FC = () => {
+  const [projects, setProjects] = useState([]);
+  useEffect(() => {
+    axios.get('http://localhost:3001/projects')
+          .then(res => {
+            setProjects(res.data)
+          })
+  },[])
+
   const classes = useStyles();
   return (
     <GenericTemplate title="案件ページ">
@@ -45,13 +45,13 @@ const ProjectPage: React.FC = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <TableRow key={row.title}>
+            {projects.map((project: Project) => (
+              <TableRow key={project.title}>
                 <TableCell component="th" scope="row">
-                  {row.title}
+                  {project.title}
                 </TableCell>
-                <TableCell align="right">{row.status}</TableCell>
-                <TableCell align="right">{row.point}</TableCell>
+                <TableCell align="right">{project.status}</TableCell>
+                <TableCell align="right">{project.point}</TableCell>
               </TableRow>
             ))}
           </TableBody>
