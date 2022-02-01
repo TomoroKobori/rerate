@@ -14,7 +14,7 @@ services:
     ports:
       - "13306:3306"
   backend:
-    build: ./backend
+    build: ./backend/docker/develop
     image: rerate_backend:1.0.0
     tty: true
     stdin_open: true
