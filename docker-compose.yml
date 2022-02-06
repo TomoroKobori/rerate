@@ -25,6 +25,7 @@ services:
       - rails_cache:/app/tmp/cache
       - packs:/app/public/packs
       - packs_test:/app/public/packs-test
+      # - tmp_data:/app/tmp
     tmpfs:
       - /tmp
     environment:
@@ -55,6 +56,12 @@ services:
       REACT_APP_API_BASE_URL: "http://localhost:3001"
     depends_on:
       - backend
+  # nginx:
+  #   build: ./backend/docker/production/nginx
+  #   volumes:
+  #     - tmp_data:/app/tmp
+  #   ports:
+  #     - 80:80
 
 volumes:
   mysql-data:
@@ -63,3 +70,4 @@ volumes:
   rails_cache:
   packs:
   packs_test:
+  # tmp_data:
